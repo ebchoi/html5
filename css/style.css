@@ -128,13 +128,13 @@ a{
     display:block;
 }
 .sub-menu1, .sub-menu2, .sub-menu3{
-l   eft: 0;
+    left: 0;
 }
 .sub-menu4, .sub-menu5, .sub-menu6{
-ri  ght: 0;
+    right: 0;
 }
 .sub-menu li{
-displ   ay: inline-block;
+    display: inline-block;
 }
 .sub-menu a{
     display: inline-block;
@@ -154,7 +154,7 @@ displ   ay: inline-block;
   content: '\e800';
 } */
 .sub-menu a:hover, .sub-menu a:focus{
-c   olor: #f00;
+    color: #f00;
 }
 /* 비주얼 애니메이션 */
 @keyframes textAni{
@@ -415,7 +415,110 @@ c   olor: #f00;
     height: 22px;
     font-size: 1.1rem;
 }
+/* 플렉스 박스 배치
+.group3{
+    display: flex;
+    background-color: yellow;
+}
+.group3::before{
+    content:"";
+}
+.group3 span{
+    border: 1px solid red;
+}
+.group3 span:last-child{
+    margin-left: auto;
+} */
 
+
+/* 공지사항 및 자료실*/
+.board {
+    background-color: yellow;
+    position: relative;
+    padding-top: 45px;
+    margin-top: 20px;
+}
+/* 숨기고 시작하도록 설정 */
+.notice-list, .notice-more, .pds-list, .pds-more{
+    display: none;
+}
+/* 리스트가 탭액트 아래에 있을때 경우의 수 */
+.tab-act .notice-list, .tab-act .notice-more,
+.tab-act .pds-list, .tab-act .pds-more{
+    display: block;
+}
+.tab{
+    background-color: pink;
+    margin: 0;
+    position: absolute;
+    top: 0;
+    cursor: pointer; 
+    /* pointer 가 cursor에 default값 */
+    /* tab 비활성화 먼저 지정 후 tab act 때 활성화 되고 적용시키기 */
+    border: 1px solid #aaa;
+    border-radius: 5px 5px 0 0;
+    background: #ccc linear-gradient(180deg, #ccc, #eee);
+    font-size: 1.2rem;
+    font-weight: 400;
+    color: #666;
+    padding: 10px 15px 8px;
+}
+.tab-act .tab{
+    color: #ce4827;
+    background: #fff;
+    border-color: #ce4827 #ce4827 #fff #ce4827
+}
+.notice-heading{
+    left: 0;
+}
+.pds-heading{
+    left: 76px;
+}
+.notice-list, .pds-list{
+    list-style-type: none;
+    padding-left: 0;
+    margin: 0;
+    background-color: skyblue;
+}
+.notice-list li, .pds-list li{
+    display: flex;
+    /* justify-content: space-between; */
+}
+
+/* con: anchor size covers text 
+.notice-list a, .pds-list a{
+    background-color: lightgreen;
+    margin-right: auto;
+} */
+
+/* anchor is no longer a inline element sinch it is under li and flex has been applied */
+
+/* grow is not appropriate for this since it makes font-size smaller too
+.notice-list a, .pds-list a{
+    background-color: lightgreen;
+    flex-grow: 1;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+} */
+
+/* TRIO for one line text overflow!!! 
+text-overflow: ellipsis;
+white-space: nowrap;
+overflow: hidden; */
+
+.notice-list a, .pds-list a{
+    background-color: lightgreen;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    width: 280px;
+}
+.notice-more, .pds-more{
+    position: absolute;
+    top: 0;
+    right: 0;
+}
 /* 슬로건 */
 .slogan{
     background-color: lightgreen;
