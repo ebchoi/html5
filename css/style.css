@@ -789,5 +789,40 @@ overflow: hidden; */
 }
 .footer-content{
     background-color: pink;
-    height: 10vh;
+    display: grid;
+    /* grid-template-columns: 140px 700px 100px; */
+    grid-template-columns: 140px 1fr 100px;
+    grid-template-rows: 50px 50px 50px;
+    grid-template-areas:    "logo guide badge"
+                            "logo address badge"
+                            "logo copyright badge"
+}
+.footer-logo{
+    /* grid-area: 1/ 1/ 4/ 2; */
+    grid-area: logo;
+    background-color: salmon;
+}
+.guide{
+    grid-area: guide;
+}
+.address{
+    background-color: lime;
+    grid-area: address;
+    /* grid-row-start: 2;
+    grid-row-end: 3;
+    grid-column-start: 2;
+    grid-column-end: 3; */
+    /* 하나만 있을때는 end는 생략해도된다 */
+}
+.copyright{
+    background-color: skyblue;
+    grid-area: copyright;
+    /* grid-area: 3 / 2 / 4/ 3; */
+    /* grid-row-start: 3;
+    grid-column-start: 2; */
+}
+.badge{
+    background-color: yellow;
+    grid-area: badge;
+    /* grid-area: 1 / 3 / 4/ 4; */
 }
