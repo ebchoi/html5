@@ -515,7 +515,6 @@ white-space: nowrap;
 overflow: hidden; */
 
 .notice-list a, .pds-list a{
-    background-color: lightgreen;
     text-overflow: ellipsis;
     white-space: nowrap;
     overflow: hidden;
@@ -580,13 +579,11 @@ overflow: hidden; */
     color:hsla(110, 30%, 70%, 1);
 }
 /* 신규이벤트 및 관련사이트 */
-.group3{
+.gradient-box{
     border: 1px solid #aaa;
     border-radius: 5px;
     background: #ccc linear-gradient(180deg, #ccc, #eee);
     padding: 10px;
-}
-.gradient-box{
     margin: 0;
 }
 .point-color{
@@ -638,7 +635,7 @@ overflow: hidden; */
     margin: 0;
     margin-bottom: 10px;
 }
-.event-heading, .related-heading{
+.section-heading { 
     font-size: 1.5rem;
     margin: 0 0 10px 0;
 }
@@ -671,11 +668,122 @@ overflow: hidden; */
     outline: 1px solid darkblue;
     outline-offset: -2px;
 }
+/* 인기사이트 */
+.favorite{
+    margin-top: 20px;
+    position: relative;
+    padding-top: 15px;
+}
+.favorite-more{
+    position: absolute;
+    top: 9px;
+    right: 2px;
+    padding: 8px;
+}
+.favorite-list{
+    margin: 0;
+    padding: 5px 0 0 0;
+    list-style-type: none;
+}
+.favorite-list li{
+    counter-increment: number;
+    margin-top: 5px;
+    display: flex;
+    align-items: center;
+}
+.favorite-list li::before{
+    content: counter(number);
+    color: #fff;
+    background-color: #aaa;
+    border-radius: 3px;
+    padding: 2px 5px;
+    margin-right: 5px;
+}
+.favorite-list a{
+    flex-grow: 1;
+}
+.favorite-list .up,
+.favorite-list .stop,
+.favorite-list .down{
+    font-style: normal;
+    width: 9px;
+    height: 11px;
+    text-indent: 9px; 
+    /* 글자가 보이지 않게 width만큼 text indent를 사용한다 block 에만 해당 
+    안전하게 하기 위해서 whitespace*/
+    white-space: nowrap;
+    overflow: hidden;
+    background-image: url(./images/rank.png);
+    background-repeat: no-repeat;
+}
+.favorite-list .stop{
+    background-position: 0 50%;
+}
+.favorite-list .down{
+    background-position: 0 100%;
+}
+.favorite-more::before{
+    color:hsla(110, 30%, 70%, 1)
+}
+
 /* 슬로건 */
 .slogan{
-    background-color: lightgreen;
-    height: 10vh;
+    padding: 10px 100px 10px 180px;
+    position: relative;
 }
+.slogan-heading{
+    width: 100px;
+    height: 83px;
+    line-height: 83px;
+    text-align: center;
+    position: absolute;
+    bottom: -25px;
+    left: 35px;
+    margin-bottom: 0;
+}
+.slogan-heading::after{
+    content:'';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top:0;
+    left: 0;
+    background: url(./images/coffee.png) no-repeat;
+}
+.slogan-content{
+    font-size: 1.4rem;
+    color: #988574;
+    margin: 0;
+}
+/* .slogan-content q{
+    quotes: "[[" "]]";
+} */
+.slogan-content q::before{
+    font-size: 3.6rem;
+    position: relative;
+    top: 15px;
+}
+.slogan-content q::after{
+    content:"";
+}
+/* My attempt */
+/* .slogan-heading{
+    position: relative;
+    width: 110px;
+    height: 83px;
+}
+.slogan-heading::after{
+    content:"";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-image: url(./images/coffee.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: pink;
+} */
 .footer{
     background-color: silver;
 }
